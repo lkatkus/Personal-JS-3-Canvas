@@ -94,7 +94,7 @@ function start(){
         this.y = y;
         this.dx = dx;
         this.dy = dy;
-        this.radius = radius
+        this.radius = radius;
         this.minRadius = radius;
         this.color = colorArray[Math.floor(Math.random()*colorArray.length)];
 
