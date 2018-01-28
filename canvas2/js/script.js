@@ -26,8 +26,8 @@ function init(){
     var circleArr = [];
 
     // CREATING CIRCLES
-    for(let i = 0; i < 10; i++){
-        let radius = 5;
+    for(let i = 0; i < 100; i++){
+        let radius = 1;
 
         // CIRCLE POSITION
         let x = Math.random() * (innerWidth - radius * 2) + radius;
@@ -92,11 +92,16 @@ function init(){
 
     // CREATING LINES
     function Line(){
-        for(let i = 0; i <=9; i++){
+        for(let i = 0, j = 0; i <= circleArr.length-1; i++){
             c.beginPath();
-            c.moveTo(circleArr[0].x,circleArr[0].y);
+            if(i >= (circleArr.length/2)){
+                j = 1;
+                c.strokeStyle = "#2c3e50";
+            }else{
+                c.strokeStyle = "#3498db";
+            }
+            c.moveTo(circleArr[j].x,circleArr[j].y);
             c.lineTo(circleArr[i].x,circleArr[i].y);
-            c.strokeStyle = "red";
             c.stroke();
         }
     }
