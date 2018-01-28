@@ -26,7 +26,7 @@ function init(){
     var circleArr = [];
 
     // CREATING CIRCLES
-    for(let i = 0; i < 100; i++){
+    for(let i = 0; i < 50; i++){
         let radius = 1;
 
         // CIRCLE POSITION
