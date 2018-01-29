@@ -26,8 +26,8 @@ function init(){
     var circleArr = [];
 
     // CREATING CIRCLES
-    for(let i = 0; i < 50; i++){
-        let radius = 1;
+    for(let i = 0; i < 50 ; i++){
+        let radius = 3;
 
         // CIRCLE POSITION
         let x = Math.random() * (innerWidth - radius * 2) + radius;
@@ -52,9 +52,9 @@ function init(){
         // DRAW A CIRCLE
         this.drawCircle = function(){
             c.beginPath();
-            c.strokeStyle = "blue";
+            c.strokeStyle = "#939393";
             c.arc(this.x, this.y, this.radius, 0, Math.PI*2, true);
-            c.fillStyle = 'red';
+            c.fillStyle = '#939393';
             c.fill();
         }
 
@@ -91,19 +91,52 @@ function init(){
     }
 
     // CREATING LINES
+    // function Line(){
+    //     for(let i = 0, j = 0; i <= circleArr.length-1; i++){
+    //         c.beginPath();
+    //         if(i >= (circleArr.length/2)){
+    //             j = 1;
+    //             c.strokeStyle = "#2c3e50";
+    //         }else{
+    //             c.strokeStyle = "#3498db";
+    //         }
+    //         c.moveTo(circleArr[j].x,circleArr[j].y);
+    //         c.lineTo(circleArr[i].x,circleArr[i].y);
+    //         c.stroke();
+    //     }
+    // }
+
     function Line(){
-        for(let i = 0, j = 0; i <= circleArr.length-1; i++){
-            c.beginPath();
-            if(i >= (circleArr.length/2)){
-                j = 1;
-                c.strokeStyle = "#2c3e50";
-            }else{
-                c.strokeStyle = "#3498db";
+
+        // LINE BETWEEN ALL CIRCLES
+        // for(let i = 0; i < circleArr.length; i++){
+        //     for(let j = 0; j < circleArr.length;j++){
+        //         if(j != i){
+        //             c.beginPath();
+        //             c.strokeStyle = "#939393";
+        //             c.moveTo(circleArr[i].x,circleArr[i].y);
+        //             c.lineTo(circleArr[j].x,circleArr[j].y);
+        //             c.stroke();
+        //         }
+        //     }
+        // }
+
+        // LINE BETWEEN CLOSES CIRCLES
+        for(let i = 0; i < circleArr.length; i++){
+            for(let j = 0; j < circleArr.length;j++){
+                if((circleArr[i].x - circleArr[j].x) > 100 || (circleArr[i].x - circleArr[j].x) < -100 || (circleArr[i].y - circleArr[j].y) > 100 || (circleArr[i].y - circleArr[j].y) < -100){
+
+                }else{
+                    c.beginPath();
+                    c.strokeStyle = "#a8a8a8";
+                    c.lineWidth=3;
+                    c.moveTo(circleArr[i].x,circleArr[i].y);
+                    c.lineTo(circleArr[j].x,circleArr[j].y);
+                    c.stroke();
+                }
             }
-            c.moveTo(circleArr[j].x,circleArr[j].y);
-            c.lineTo(circleArr[i].x,circleArr[i].y);
-            c.stroke();
         }
+
     }
 
 
