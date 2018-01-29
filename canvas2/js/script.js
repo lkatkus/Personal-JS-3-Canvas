@@ -124,7 +124,7 @@ function init(){
         // LINE BETWEEN CLOSES CIRCLES
         for(let i = 0; i < circleArr.length; i++){
             for(let j = 0; j < circleArr.length;j++){
-                if((circleArr[i].x - circleArr[j].x) > 100 || (circleArr[i].x - circleArr[j].x) < -100 || (circleArr[i].y - circleArr[j].y) > 100 || (circleArr[i].y - circleArr[j].y) < -100){
+                if((circleArr[i].x - circleArr[j].x) > 150 || (circleArr[i].x - circleArr[j].x) < -150 || (circleArr[i].y - circleArr[j].y) > 150 || (circleArr[i].y - circleArr[j].y) < -150){
 
                 }else{
                     c.beginPath();
